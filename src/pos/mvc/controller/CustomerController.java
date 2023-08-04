@@ -71,4 +71,54 @@ public class CustomerController {
         }
         return customerModels;
     }
+    
+    public CustomerModel getCustomer(String custID)throws SQLException{
+        Connection connection = DBConnection.getInstance().getConnection();
+        
+        String query = "Select * From Customer WHERE CustID= ?";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, custID);
+        
+        ResultSet rst = statement.executeQuery();
+        
+        while(rst.next()){
+            CustomerModel cm;
+            cm = new CustomerModel(rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(6),
+                    rst.getString(7),
+                    rst.getString(8),
+                    rst.getString(9),
+                    rst.getDouble(5));
+            return cm;
+        }
+        return null;
+    }
+    
+    public String updateCustomer(CustomerModel customerModel) throws SQLException{
+        
+        Connection connection = DBConnection.getInstance().getConnection();
+        
+        String query = "Update Customer SET custTitle = ?,CustName=?, DOB=?, salary=?, CustAddress=?, City=?, Province=?, PostalCode=? Where CustID=?";
+        
+        PreparedStatement preparedStatement = connection.prepareCall(query);
+        preparedStatement.setString(9,customerModel.getCustID());
+        preparedStatement.setString(1,customerModel.getTitle());
+        preparedStatement.setString(5,customerModel.getAddress());
+        preparedStatement.setString(6,customerModel.getCity());
+        preparedStatement.setString(3,customerModel.getDob());
+        preparedStatement.setString(2,customerModel.getName());
+        preparedStatement.setString(7,customerModel.getProvince());
+        
+        preparedStatement.setString(8,customerModel.getZip());
+        preparedStatement.setDouble(4,customerModel.getSalary());
+        
+        if(preparedStatement.executeUpdate()>0){
+            return "Success";
+        }else{
+            return "Fail";
+        }
+    }
 }
