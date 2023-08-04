@@ -119,6 +119,20 @@ public class CustomerController {
             return "Success";
         }else{
             return "Fail";
+        }    
+    }
+    
+    public String deleteCustomer(String CustID)throws SQLException{
+        Connection connection = DBConnection.getInstance().getConnection();
+        
+        String query = "DELETE FROM Customer WHERe CustID=?";
+        PreparedStatement statement = connection.prepareCall(query);
+        statement.setString(1, CustID);
+        
+        if(statement.executeUpdate()>0){
+            return "Success";
+        }else{
+            return "Fail";
         }
     }
 }
