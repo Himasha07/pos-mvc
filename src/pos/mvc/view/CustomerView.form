@@ -134,33 +134,31 @@
                                               <Component id="custAdderssText" alignment="0" min="-2" pref="614" max="-2" attributes="0"/>
                                               <Component id="custPCText" min="-2" pref="114" max="-2" attributes="0"/>
                                               <Component id="custDOBText" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="custCityText" min="-2" pref="114" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                                          <Component id="custProvinceLabel" min="-2" pref="90" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="custProvinceText" min="-2" pref="114" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="custtitletext" min="-2" pref="114" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                                          <Component id="custNameLabel" min="-2" pref="103" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="custNameText" min="-2" pref="379" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="custidtext" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                                                          <Component id="custSalarLabel1" min="-2" pref="92" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="custSalaryText1" max="32767" attributes="0"/>
-                                                      </Group>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="custCityText" min="-2" pref="114" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                                      <Component id="custProvinceLabel" min="-2" pref="90" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="custProvinceText" min="-2" pref="114" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="custtitletext" min="-2" pref="114" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                                      <Component id="custNameLabel" min="-2" pref="103" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="custNameText" min="-2" pref="379" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="custidtext" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                                                      <Component id="custSalarLabel1" min="-2" pref="92" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="custSalaryText1" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="812" max="-2" attributes="0"/>
@@ -329,6 +327,7 @@
                       <Font name="Segoe UI Black" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Update Customer"/>
+                    <Property name="actionCommand" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatebuttonActionPerformed"/>
