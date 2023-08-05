@@ -312,11 +312,11 @@ public class ItemView extends javax.swing.JFrame {
     }//GEN-LAST:event_QoHTextActionPerformed
 
     private void updatebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebuttonActionPerformed
-      
+            updateItem();
     }//GEN-LAST:event_updatebuttonActionPerformed
 
     private void deletebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebuttonActionPerformed
-      
+            deleteItem();
     }//GEN-LAST:event_deletebuttonActionPerformed
 
     private void addbutton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbutton2ActionPerformed
@@ -430,4 +430,36 @@ public class ItemView extends javax.swing.JFrame {
             }
     }
     
+    public void updateItem(){
+            try {
+              ItemModel itemModel = new ItemModel(itemCodetext.getText(),
+                    descriptionText.getText(),
+                    packSizeText.getText(),
+                    Double.parseDouble(unitPricetext.getText()),
+                    Integer.parseInt(QoHText.getText()));
+
+            String resp = itemController.updateItem(itemModel);
+            JOptionPane.showMessageDialog(this, resp);
+            clear();
+            loadAllItems();
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemView.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }
+    
+    private void deleteItem( ){
+        try {
+            String itemCode = itemCodetext.getText();
+            String resp = itemController.deleteItem(itemCode);
+            JOptionPane.showMessageDialog(this, resp);
+            clear();
+            loadAllItems();
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+        
+    }
+
 }

@@ -15,7 +15,7 @@ public class ItemModel {
     private Double unitPrize;
     private Integer qoh;
     
-    public ItemModel(){
+    public ItemModel(String text, String text1, String text2, double parseDouble){
         
     }
 
@@ -95,11 +95,6 @@ public class ItemModel {
      */
     public void setQoh(Integer qoh) {
         this.qoh = qoh;
-    }
-
-    @Override
-    public String toString() {
-        return "ItemModel{" + "itemcode=" + itemcode + ", description=" + description + ", packSize=" + packSize + ", unitPrize=" + unitPrize + ", qoh=" + qoh + '}';
     }
     
      
